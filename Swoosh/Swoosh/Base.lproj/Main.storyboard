@@ -47,7 +47,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="u7o-F9-DcN" kind="show" id="gD0-co-IVi"/>
+                                    <segue destination="u7o-F9-DcN" kind="show" identifier="leagueVCSegue" id="gD0-co-IVi"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find a team in your city &amp; dominate the league" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oz-bn-rkz">
@@ -122,6 +122,9 @@
                                         <state key="normal" title="Men">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="mensButtonTapped" destination="u7o-F9-DcN" eventType="touchUpInside" id="qGS-DA-aal"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ye2-xv-oHd" customClass="SwooshButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="65" width="343" height="50"/>
@@ -130,6 +133,9 @@
                                         <state key="normal" title="Women">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="womensButtonTapped" destination="u7o-F9-DcN" eventType="touchUpInside" id="9nf-z8-kZN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JS9-5y-AmC" customClass="SwooshButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="129.99999999999997" width="343" height="50"/>
@@ -138,6 +144,9 @@
                                         <state key="normal" title="Co-ed">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="coedButtonTapped" destination="u7o-F9-DcN" eventType="touchUpInside" id="ged-5J-lLb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -151,6 +160,9 @@
                                 <state key="normal" title="NEXT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextButtonTapped" destination="u7o-F9-DcN" eventType="touchUpInside" id="3Ib-VZ-xTn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSs-cB-j5A">
                                 <rect key="frame" x="25" y="10" width="29" height="24"/>
@@ -186,6 +198,13 @@
                         <viewLayoutGuide key="safeArea" id="CW9-zd-3c4"/>
                     </view>
                     <navigationItem key="navigationItem" id="QZZ-i9-bEL"/>
+                    <connections>
+                        <outlet property="coedButton" destination="JS9-5y-AmC" id="LhK-0w-nHS"/>
+                        <outlet property="mensButton" destination="zhQ-Xm-Ls9" id="02c-x9-Av4"/>
+                        <outlet property="nextButton" destination="9hC-3U-Sd6" id="um1-je-XW6"/>
+                        <outlet property="womensButton" destination="ye2-xv-oHd" id="gya-Xt-fF1"/>
+                        <segue destination="2zI-Vc-1yL" kind="show" identifier="skillVCSegue" id="v2r-qx-lG4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCT-G5-766" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="5YT-9e-xhX" userLabel="Exit" sceneMemberID="exit"/>
@@ -197,14 +216,14 @@
             <objects>
                 <viewController id="2zI-Vc-1yL" customClass="SkillVC" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IBQ-KE-22d">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beginnerBallerBG" translatesAutoresizingMaskIntoConstraints="NO" id="69k-nt-R44">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ugO-JF-JoS" userLabel="Buttons Stack View">
-                                <rect key="frame" x="16" y="182.33333333333334" width="343" height="50"/>
+                                <rect key="frame" x="16" y="138.33333333333334" width="343" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZn-yr-FZb" customClass="SwooshButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="164" height="50"/>
@@ -228,7 +247,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="0Rh-n6-8ah" userLabel="Logo Stack View">
-                                <rect key="frame" x="128" y="63.999999999999993" width="119" height="68.333333333333314"/>
+                                <rect key="frame" x="128" y="20" width="119" height="68.333333333333329"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swooshLogo" translatesAutoresizingMaskIntoConstraints="NO" id="6XL-6I-Hy5">
                                         <rect key="frame" x="0.0" y="0.0" width="119" height="20"/>
@@ -242,7 +261,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBW-1d-DFM" customClass="SwooshButton" customModule="Swoosh" customModuleProvider="target">
-                                <rect key="frame" x="16" y="708" width="343" height="50"/>
+                                <rect key="frame" x="16" y="654" width="343" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.60098481510000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gWI-DR-tv3"/>
@@ -271,6 +290,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g12-Kw-UHv"/>
                     </view>
+                    <navigationItem key="navigationItem" id="HH2-rp-lpm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wmg-uY-kWI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
