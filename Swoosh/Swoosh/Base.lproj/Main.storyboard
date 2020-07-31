@@ -199,10 +199,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QZZ-i9-bEL"/>
                     <connections>
-                        <outlet property="coedButton" destination="JS9-5y-AmC" id="LhK-0w-nHS"/>
-                        <outlet property="mensButton" destination="zhQ-Xm-Ls9" id="02c-x9-Av4"/>
                         <outlet property="nextButton" destination="9hC-3U-Sd6" id="um1-je-XW6"/>
-                        <outlet property="womensButton" destination="ye2-xv-oHd" id="gya-Xt-fF1"/>
                         <segue destination="2zI-Vc-1yL" kind="show" identifier="skillVCSegue" id="v2r-qx-lG4"/>
                     </connections>
                 </viewController>

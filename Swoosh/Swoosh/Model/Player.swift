@@ -8,13 +8,9 @@
 
 import Foundation
 
-enum League {
-    case mens, womens, coed
-}
-
 struct Player {
     
-    var desiredLeague: League!
+    var desiredLeague: String!
     var selectedSkillLevel = ""
     
 }
